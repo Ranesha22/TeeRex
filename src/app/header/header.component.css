@@ -1,0 +1,9 @@
+header {background-color: #A6BB8D;}
+nav {padding:10px 15px!important;box-shadow: 0 2px 5px #033021;height: 65px;}
+button {background-color: transparent!important;box-shadow: none!important;border: none!important;}
+h1,button {color:#033021!important}
+ 
+.icon { width: 2rem; height: 2rem; margin-left: 0.5rem;} 
+ 
+.badge {top:21px;right:10px}
+ 

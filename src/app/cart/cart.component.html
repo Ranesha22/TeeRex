@@ -1,0 +1,54 @@
+<div *ngIf="limit" id="limitExceed" class="errMessage text-white bg-danger float-end" role="alert" aria-live="assertive"
+    aria-atomic="true">
+    <div class="d-flex justify-content-between w-100">
+        <div class="toast-body text-center">
+            You have this item in your bag with the maximum available quantity.
+        </div>
+        <button type="button" class="btn btn-close" aria-label="Close" (click)="limit=false"
+            style="background: none!important;margin-bottom: 4px!important;margin-left: 5px!important;">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+</div>
+
+<div class="row main-row">
+    <p *ngIf="cart.totalQuantity<=0" class="fw-bold" style="font-size: 16px;">There is nothing in your cart...</p>
+    <div *ngIf="cart.totalQuantity>0" class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Remove</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of cartProducts;index as i">
+                    <td class="fw-bold">
+                        {{i+1}}</td>
+                    <td>
+                        <img src={{product.imageURL}} class="card-img-top" alt="...">
+                        <label class="fw-bold">{{product.name}}</label>
+                    </td>
+                    <td>
+                        <div class="addToCart" style="float:unset">
+                            <button class="btn btn-md add" (click)="updateCart(product,'ADD')">+</button>
+                            <label class="bg-white">{{product.cartQuantity}}</label>
+                            <button class="btn btn-md remove" (click)="updateCart(product,'REMOVE')">-</button>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="removeAll" (click)="updateCart(product,'REMOVE ALL')"><i class="bi bi-archive"></i></button>
+                    </td>
+                    <td>
+                        <label>₹{{product.price * product.cartQuantity}}</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <label class="totalPrice"> Total Amount : {{cart.totalPrice}}</label>
+    </div>
+</div>

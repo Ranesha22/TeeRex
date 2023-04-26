@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+* { margin: 0; padding: 0; } 
+*:focus, *:visited { outline: 0 !important; } 
+
+html,body { font-size: 12px; max-width: 100%!important; background-color: #fff; font-family: 'Roboto',Arial, Helvetica, sans-serif; scroll-behavior: smooth; height: 100%!important;color:#033021 } 
+.container,.container-fluid { background-color: #fff;overflow-y: auto;height: calc(100%-62px);padding: 15px !important;} 
+
+a {cursor: pointer;text-decoration: none}
+
+.page-title {font-size:20px;margin-bottom:10px}
+button {background-color:#033021!important;color:white!important;border:1px solid #033021!important;box-shadow:0 2px 2px 0 #72865B;border-radius: 0!important;}
+
+
+.addToCart{display: inline-flex;border: 1px solid #033021;float: right;}
+.addToCart > * {width: 30px!important;height: 30px!important;display: flex;align-items: center;justify-content: center;}
+
+.errMessage {position: fixed;width:100%;display: flex;align-items: center;border: 0;padding:15px;right:0;top:0;z-index: 100000;}
+.btn-close {border: none!important;box-shadow: none!important;}
